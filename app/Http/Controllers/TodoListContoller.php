@@ -9,10 +9,13 @@ use Illuminate\Support\Facades\Route;
 class TodoListContoller extends Controller
 {
     public function index(){
-        return view('welcome', ['listNames' => ListItem::all()]);   
+        return view('welcome', ['listNames' => ListItem::where('is_complete', 1)->get()]);   
     }
 
-    public function markcomplete(){
+    public function markcomplete($id){
+        $listItem = ListItem::find($id);
+        $listItem->is_complete = 1;
+        $listItem->save();
         return redirect('/');  
     }
     

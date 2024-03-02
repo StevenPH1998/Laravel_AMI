@@ -26,7 +26,8 @@
             @foreach ($listNames as $item)
                 <div class="flex" style="">
                     <p>Item: {{ $item->name }}</p>
-                    <form action="{{ route('markComplete') }}" method="post">
+                    <form action="{{ route('markComplete', $item->id) }}" method="post">
+                        {{ csrf_field() }}
                         <button type="submit">Mark Complete</button>
                     </form>
                 </div>
