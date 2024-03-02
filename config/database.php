@@ -45,9 +45,9 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
+            'url' => 'https://gamerracstudio.com',
+            'host' => 'localhost',
+            'port' => '3306',
             'database' => 'admin_laraproject',
             'username' => 'larauser',
             'password' => '4^3Xb1cm7',
